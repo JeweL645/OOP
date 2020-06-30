@@ -1,0 +1,47 @@
+class User():  # the parentheses in the class defination is empty cause we're creating the class from scratch
+    """Created a user class"""
+    def __init__(self, first_name, last_name,
+                 nationality, sex, birth_date):     # varius attributes
+        self.first_name = first_name
+        self.last_name = last_name
+        self.nationality = nationality
+        self.sex = sex
+        self.birthdate = birth_date
+        self.loging_attempt = 0                 #set up the attributes value as default value
+
+    def describe_user(self):
+        full_name = self.first_name+" "+self.last_name
+        print("User's full name: "+ full_name.title())
+        print(self.first_name.title() + " is "+ self.nationality.title())
+        print(self.first_name.title() + " is "+ self.sex)
+        print(self.first_name.title() + "'s birth date is: "+ str(self.birthdate))
+
+    def greet_user(self):
+        print("Congratulations!! "+self.first_name.title()+ ". You have started your journey as Pythonastas.")
+
+    def increment_loging_attempts(self):           # this method actually increments the logging attempts value by 1
+        self.loging_attempt = self.loging_attempt + 1
+
+    def reset_login_attempts(self):               # this method resets the logging attempts value to Zero 
+        self.loging_attempt = 0
+
+
+
+
+my_self = User('elias', 'islam', 'bangladeshi', 'male', 'Nov 16th, 1997') #declaring my_self as the first instance of user class
+my_self.describe_user()
+my_self.greet_user()
+
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+my_self.increment_loging_attempts()
+print("Logging Status: "+str(my_self.loging_attempt))
+
+my_self.reset_login_attempts()
+print("Logging Status: "+str(my_self.loging_attempt))
