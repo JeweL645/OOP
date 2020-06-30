@@ -1,0 +1,22 @@
+class Restaurant():
+    """Restaurant class"""
+
+    def __init__(self, restaurant_name, cuisine_type):  # initializing the method with the two attributes
+        """Iniatialize the attributes"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+
+    def describe_restaurant(self):  # declaring a method that shows the information of the restaurant
+        print("Name of The Restaurant is: " + self.restaurant_name.title())
+        print("Cuisine Type: " + self.cuisine_type.title())
+
+    def open_retaurant(self):  # this method prints the restaurant is open
+        print("The restaurant is open now!!")
+
+
+restaurant1 = Restaurant('atrium', 'asian')  # creating an instance of restaurant class
+print(restaurant1.restaurant_name)  # printing the restaurant name with dot notation by object name
+print(restaurant1.cuisine_type)  # printing the cuisine with dot notation by object name
+print()
+restaurant1.describe_restaurant()  # caling the method by the dot notation by the name of the instance
+restaurant1.open_retaurant()  # caling the method by the dot notation by the name of the instance
