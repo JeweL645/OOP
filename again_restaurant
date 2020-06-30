@@ -1,0 +1,41 @@
+class Restaurant():
+    """Restaurant class"""
+
+    def __init__(self, restaurant_name, cuisine_type, number_served):  # initializing the method with the two attributes
+        """Iniatialize the attributes"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = 20
+
+    def describe_restaurant(self):  # declaring a method that shows the information of the restaurant
+        print("Name of The Restaurant is: " + self.restaurant_name.title())
+        print("Cuisine Type: " + self.cuisine_type.title())
+        print(self.restaurant_name.title()+" has served almost: "+ str(self.number_served))
+
+    def set_number_served(self, updated_num):
+        self.number_served = updated_num
+
+
+    def open_retaurant(self):  # this method prints the restaurant is open
+        print("The restaurant is open now!!")
+
+    def increment_number_served(self, increment):
+        self.number_served += increment
+
+
+#restaurant1 = Restaurant('atrium', 'asian')  # creating an instance of restaurant class
+#print()
+#restaurant1.describe_restaurant()  # caling the method by the dot notation by the name of the instance
+#restaurant1.open_retaurant()  # caling the method by the dot notation by the name of the instance
+
+fav_restaurant = Restaurant('jing ling', 'chinese', '10')
+fav_restaurant.describe_restaurant()
+fav_restaurant.open_retaurant()
+fav_restaurant.number_served = 10
+print(fav_restaurant.number_served)
+
+fav_restaurant.set_number_served(250)
+print(fav_restaurant.number_served)
+
+fav_restaurant.increment_number_served(5000)
+print(fav_restaurant.number_served)
