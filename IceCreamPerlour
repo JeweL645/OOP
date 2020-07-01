@@ -1,0 +1,39 @@
+class Restaurant():
+    """Restaurant class"""
+
+    def __init__(self, restaurant_name, cuisine_type, number_served):  # initializing the method with the two attributes
+        """Iniatialize the attributes"""
+        self.restaurant_name = restaurant_name
+        self.cuisine_type = cuisine_type
+        self.number_served = number_served
+
+    def describe_restaurant(self):  # declaring a method that shows the information of the restaurant
+        print("Name of The Restaurant is: " + self.restaurant_name.title())
+        print("Cuisine Type: " + self.cuisine_type.title())
+        print(self.restaurant_name.title()+" has served almost: "+ str(self.number_served))
+
+    def set_number_served(self, updated_num):
+        self.number_served = updated_num
+
+
+    def open_retaurant(self):  # this method prints the restaurant is open
+        print("The restaurant is open now!!")
+
+    def increment_number_served(self, increment):
+        self.number_served += increment
+
+
+class IceCreamStand(Restaurant):        
+    """This class is a child class of Restaurant class"""
+    def __init__(self, restaurant_name, cuisine_type, number_served):
+        super().__init__(restaurant_name, cuisine_type, number_served)
+        self.flavours = ['vanilla', 'chocolate', 'strawberry']               # adding  a list as the value of an attributes of child class
+
+    def displays_flavours_menu(self):
+        print("Here is the Menu of Avialable Flavours: ")
+        for flavour in self.flavours:
+            print(flavour.title())
+
+Road_Side_IceCream = IceCreamStand('road side bar', 'ice cream perlour', 105)
+Road_Side_IceCream.describe_restaurant()
+Road_Side_IceCream.displays_flavours_menu()               # calling the new created method about the displaying the menu
