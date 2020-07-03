@@ -1,0 +1,24 @@
+class Car():  # the parentheses in the class definition is empty cause we're creating this class from scratch
+    """A simple attempt to represent a car"""
+
+    def __init__(self, make, model, year):
+        self.make = make
+        self.model = model
+        self.year = year
+        self.odometer_reading = 0
+
+    def get_descriptive_name(self):
+        long_name = self.make.title()+" - "+ self.model.title()+" - "+str(self.year)
+        print(long_name)
+
+    def read_odometer(self):
+        print("The car ran " + str(self.odometer_reading) + " km.")
+
+    def update_odometer(self, mileage):
+        if mileage >= self.odometer_reading:
+            self.odometer_reading = mileage
+        else:
+            print("You can't roll back the odometer reading.")
+
+    def increment_odometer(self, miles):
+        self.odometer_reading += miles
